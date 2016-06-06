@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title OLOO
+    body
+        p Clients
+        form(method="POST")
+            select(name="name")
+                each client in clients
+                    option(value=client.name) #{client.name}
+            select(name="surname")
+                each client in clients
+                    option(value=client.surname) #{client.surname}
+            p nameOn
+            input(type='radio',name="filter",value="nameOn",checked)
+            p surnameOn
+            input(type='radio',name="filter",value="surnameOn")
+            p all
+            input(type='radio',name="filter",value="All")
+            br
+            button(type="submit") Send
+        div.results
+            if info
+                each elem in info
+                    each i in elem
+                        p #{i}
