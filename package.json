@@ -10,8 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "async": "^2.0.0-rc.5",
+    "base-64": "^0.1.0",
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.6",
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "morgan": "^1.7.0",
