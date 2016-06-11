@@ -1,10 +1,10 @@
 var     express         =       require(    'express'       ),
-    app             =       express(),
-    logger          =       require(    'morgan'        ),
-    bodyParser      =       require(    'body-parser'   ),
-    cookieParser    =       require(    'cookie-parser' ),
-    jade            =       require(    'jade'),
-    ResSend = require("./ResSend");
+        app             =       express(),
+        logger          =       require(    'morgan'        ),
+        bodyParser      =       require(    'body-parser'   ),
+        cookieParser    =       require(    'cookie-parser' ),
+        jade            =       require(    'jade'),
+        ResSend         =       require("./ResSend");
 
 
 app.use(    logger('dev')      );
@@ -16,22 +16,40 @@ app.set(    'view engine', 'jade'
 app.use(    express.static('file')  );
 
 
+var Routes = require("./routes");
+
+
+app.route(Routes("index").path)
+    .get(Routes("index").Handler);
+
+app.route(Routes("register").path)
+    .get(Routes("register").Handler.Get);
+
+app.route(Routes("register").path)
+    .post(Routes("register").Handler.Post);
+
+app.route(Routes("auth").path)
+    .get(Routes("auth").Handler.Get);
+
+app.route(Routes("auth").path)
+    .post(Routes("auth").Handler.Post);
+
 /*
  путь к главной странице, тут проверяем наличие ключа в куках
  если ключа нет, то редиректим на авторизацию, из которой можно прийти в регистрацию
  */
-app.route("/")
-    .get(function(req,res){
-       if(['key_alpico'] in req.cookies){
-           require("./db_query")(req,function(result) {
-               ['render'] in result ? res.render(result.render, result.json)
-                   : ['json'] in result ? res.json(result.json)
-                   : res.sendStatus(result.status);
-           });
-       } else{
-           res.redirect("/login");
-       }
-    });
+//app.route("/")
+//    .get(function(req,res){
+//       if(['key_alpico'] in req.cookies){
+//           require("./db_query")(req,function(result) {
+//               ['render'] in result ? res.render(result.render, result.json)
+//                   : ['json'] in result ? res.json(result.json)
+//                   : res.sendStatus(result.status);
+//           });
+//       } else{
+//           res.redirect("/login");
+//       }
+//    });
 
 app.route("/login")
     .get(function(req,res){
