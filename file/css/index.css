@@ -1,0 +1,21 @@
+@font-face {
+    font-family: AlpicoFont;
+    src: url(fontAlpico.otf);
+}
+
+html,body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    font-family: AlpicoFont!important;
+    font-weight: 300;
+    color: rgb(119,119,119);
+}
+
+p,a,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}

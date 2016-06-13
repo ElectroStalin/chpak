@@ -16,6 +16,10 @@ module.exports = function(res,results){
                 }
             }
         }
+        if(results.redirect){
+            res.redirect(results.redirect);
+            return;
+        }
         if(results.render){
             res.status(results.status).render(results.render,{});
         }else if(results.body){

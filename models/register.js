@@ -3,14 +3,19 @@ var ResSend = require("../ResSend");
 
 module.exports = {
     Get:function(req,res){
-        res.sendStatus(200);
+        'token' in req.cookies ?  ResSend(res,{status:200,redirect:'/'})
+            : ResSend(res,{status:200,render:'register'});
     },
     Post:function(req,res){
-        DB.config.Name = 'register';
-        DB.config.Set = [req.body.name,req.body.surname,"",req.body.password];
-        DB.Get(function(status,result){
-            status ? ResSend(res,{status:200})
-                : ResSend(res,{error:403})
-        });
+        if('token' in req.cookies){
+            ResSend(res,{status:200,redirect:'/'})
+        }else {
+            DB.config.Name = 'register';
+            DB.config.Set = req.body;
+            DB.Get(function (status, result) {
+                status ? ResSend(res, {status: 200, redirect: '/login'})
+                    : ResSend(res, {error: 403});
+            });
+        }
     }
 };

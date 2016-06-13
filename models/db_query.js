@@ -4,14 +4,32 @@ var pool  = mysql.createPool({
     host     : 'localhost',
     user     : 'root',
     password : 'poltava1100',
-    database : 'alpico'
+    database : 'db_alpico'
 });
+
+var ValidateData = {
+    register:['login','name','surname','password'],
+    auth:['login','password'],
+    data:function(value){
+        var _data = [];
+        for(var i in this[config.name]){
+            if(this[config.name][i] in value){
+                _data.push(value[this[config.name][i]]);
+            }
+        }
+        return _data;
+    }
+};
 
 var config = {
     name:'',
     register:{
-        sql:"INSERT INTO `clients`(`Name`, `Surname`, `Qualification`, `Password`) VALUES  (?,?,?,?)",
+        sql:"INSERT INTO users (login,name,surname,password) VALUES  (?,?,?,?)",
         values:[]
+    },
+    auth:{
+      sql:"SELECT id,name,surname from users where login = ? and password = ?",
+      values:[]
     },
     get Get(){
         return this[this.name];
@@ -20,7 +38,7 @@ var config = {
       this.name = arg;
     },
     set Set(arg){
-        this[this.name].values = arg;
+        this[this.name].values = ValidateData.data(arg);
     }
 
 };

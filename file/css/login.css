@@ -1,0 +1,83 @@
+#Login{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    width:350px;
+    height: 235px;
+    border:1px solid rgb(246,246,246);
+    border-radius: 5px;
+    box-shadow: 0 0 7px -5px rgba(0,0,0,0.6);
+}
+
+#Login .header{
+    background: rgba(248,248,248,.9);
+    border-bottom: 1px solid rgb(246,246,246);
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+#Login .header h2{
+    line-height: 60px;
+}
+
+#Login .body{
+    position: absolute;
+    padding: 15px;
+    top:60px;
+    bottom: 40px;
+    left:0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+#Login .body input{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 0 5px;
+    border:1px solid rgb(224,226,228);
+    height: 30px;
+    box-sizing: border-box;
+    color:rgb(119,119,119);
+    font-family: AlpicoFont;
+    font-weight: 300;
+}
+
+#Login .body button{
+    width: 100%;
+    border-radius: 5px;
+    border:1px solid rgb(224,226,228);
+    cursor: pointer;
+    color:rgb(119,119,119);
+    font-family: AlpicoFont;
+    font-weight: 300;
+}
+
+#Login .footer{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    padding: 0 15px;
+    background: rgba(248,248,248,.9);
+    box-sizing: border-box;
+    border-top: 1px solid rgb(246,246,246);
+    height: 40px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+#Login .footer a{
+    text-decoration: none;
+    color:rgb(119,119,119);
+    line-height: 40px;
+}
+
+#Login .footer a:hover {
+    color: rgb(90, 90, 90);
+}

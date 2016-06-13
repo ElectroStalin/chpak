@@ -3,20 +3,18 @@ html
     head
         meta(charset='utf-8')
         title Регистрация
+        link(href='css/index.css',rel='stylesheet')
+        link(href='css/register.css',rel='stylesheet')
     body
-        form(method="POST")
-            p email
-            input(type='text' name='email' placeholder='email')
-            p password
-            input(type='text' name='password' placeholder='password')
-            p name
-            input(type='text' name='name' placeholder='name')
-            p surname
-            input(type='text' name='surname' placeholder='surname')
-            p phone number
-            input(type='text' name='phone' placeholder='phone')
-            p qualification
-            input(type='text' name='qual' placeholder='qualification')
-            br
-            button(type="submit") Send
-        a(href='/login') Авторизация
+        div#Register
+            div.header
+                h2 Sign Up
+            div.body
+                form(method="POST")
+                    input(type='text' name='login' placeholder='login' required)
+                    input(type='password' name='password' placeholder='Password' required)
+                    input(type='text' name='name' placeholder='Name' required)
+                    input(type='text' name='surname' placeholder='Surname' required)
+                    button(type="submit") Send
+            div.footer
+                a(href='/auth') Авторизация
