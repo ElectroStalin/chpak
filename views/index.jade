@@ -47,10 +47,11 @@ html
                 div
                     p Creator
             div.body-list
-                each element in routes
-                    div.body-list__element
-                        div #{element.name}
-                        div #{element.descript}
-                        div #{element.max_users}
-                        div #{element.status}
-                        div #{element.creator}
+                if routes
+                    each element in routes
+                        div.body-list__element
+                            div #{element.name}
+                            div #{element.descript}
+                            div #{element.max_users}
+                            div #{element.status}
+                            div #{element.creator}

@@ -3,7 +3,7 @@ var async = require("async");
 var pool  = mysql.createPool({
     host     : 'localhost',
     user     : 'root',
-    password : 'poltava1100',
+    password : '',
     database : 'db_alpico'
 });
 
