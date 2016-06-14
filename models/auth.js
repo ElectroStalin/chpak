@@ -14,7 +14,7 @@ module.exports = {
             DB.config.Set = req.body;
             console.log(req.body);
             DB.Get(function(status,result){
-                status && result ? ResSend(res,{status:200,cookie:{add:[["token",Date()+req.body.login]]},redirect:'/'})
+                status && result ? ResSend(res,{status:200,cookie:{add:[["token",Date.parse(Date())+"@@"+req.body.login]]},redirect:'/'})
                     : ResSend(res,{error:403});
             });
         }

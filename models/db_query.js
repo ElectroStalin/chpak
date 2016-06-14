@@ -10,6 +10,9 @@ var pool  = mysql.createPool({
 var ValidateData = {
     register:['login','name','surname','password'],
     auth:['login','password'],
+    index_profile:['login'],
+    index_routes:['login','creator'],
+    routes:['name','descript','max_users','creator'],
     data:function(value){
         var _data = [];
         for(var i in this[config.name]){
@@ -30,6 +33,18 @@ var config = {
     auth:{
       sql:"SELECT id,name,surname from users where login = ? and password = ?",
       values:[]
+    },
+    index_profile:{
+      sql:"SELECT id,name,surname,login from users where login = ?",
+      values:[]
+    },
+    index_routes:{
+        sql:"SELECT * from routes where id IN (select routeId from routes_users where userId IN (select id from users where login = ?)) OR creator = ?",
+        values:[]
+    },
+    routes:{
+        sql:"INSERT INTO routes (name,descript,max_users,creator) VALUES (?,?,?,?)",
+        values:[]
     },
     get Get(){
         return this[this.name];

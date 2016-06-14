@@ -1,0 +1,92 @@
+.menu{
+    position: absolute;
+    top:0;left:0;
+    bottom: 0;
+    width: 300px;
+    background: #121b3e;
+}
+
+.menu .menu-element{
+    float:left;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu .menu-element:hover{
+    background: rgb(17, 23, 47);
+}
+
+.menu .menu-element p{
+    line-height: 40px;
+    color:rgb(242,243,245);
+}
+
+.menu .close-icon{
+    float:left;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.menu .close-icon div{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top:0;
+    bottom: 0;
+    margin:auto 0;
+    cursor:pointer;
+}
+
+.menu .close-icon div::before{
+    content: '';
+    position: absolute;
+    top:10px;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menu .close-icon div::after{
+    content: '';
+    position: absolute;
+    top:10px;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+
+.menu:not([class*='disabled']){
+    animation: FadeInMenu 1.5s ;
+    -webkit-animation: FadeInMenu 1.5s ;
+}
+
+.menu.close{
+    animation: FadeOutMenu 1.5s ;
+    -webkit-animation: FadeOutMenu 1.5s ;
+}
+
+.menu.disabled{
+    -webkit-transform: translateX(-100%)!important;
+    -moz-transform: translateX(-100%)!important;
+    -ms-transform: translateX(-100%)!important;
+    -o-transform: translateX(-100%)!important;
+    transform: translateX(-100%)!important;
+}

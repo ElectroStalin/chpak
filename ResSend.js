@@ -21,7 +21,11 @@ module.exports = function(res,results){
             return;
         }
         if(results.render){
-            res.status(results.status).render(results.render,{});
+            if(results.body){
+                res.status(results.status).render(results.render,results.body);
+            }else{
+                res.status(results.status).render(results.render,{});
+            }
         }else if(results.body){
             res.status(results.status).json(results.body).end();
         }else{

@@ -34,6 +34,17 @@ app.route(Routes("auth").path)
 app.route(Routes("auth").path)
     .post(Routes("auth").Handler.Post);
 
+app.route(Routes("logout").path)
+    .get(Routes("logout").Handler);
+
+app.route(Routes("routes").path)
+    .get(Routes("routes").Handler.Get);
+
+app.route(Routes("routes").path)
+    .post(Routes("routes").Handler.Post);
+
+app.route(Routes("routes").path)
+    .put(Routes("routes").Handler.Put);
 
 app.listen(9000);
 console.log('server start!');

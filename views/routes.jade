@@ -1,0 +1,46 @@
+doctype html
+html
+   head
+      meta(charset='utf-8')
+      title Маршруты
+      link(href='css/index.css',rel='stylesheet')
+      link(href='css/index_page.css',rel='stylesheet')
+      link(href='css/profile.css',rel='stylesheet')
+      link(href='css/menu.css',rel='stylesheet')
+      link(href='css/animation.css',rel='stylesheet')
+      link(href='css/index_page.css',rel='stylesheet')
+      link(href='css/routes.css',rel='stylesheet')
+      script(src='js/jquery.js')
+      script(src='js/script.js')
+   body
+      div.menu.disabled
+         div.close-icon
+            div(data-click="menu")
+         div.menu-element(data-menu="index")
+            p Главная
+         div.menu-element(data-menu="people")
+            p Люди
+         div.menu-element(data-menu="logout")
+            p Выйти
+      div.profile
+         div.menu-icon(data-click="menu")
+            hr
+            hr
+            hr
+         div.title
+            h2 Профиль
+         div.profile-info
+            input(type='text',placeholder='Login',readonly,dusabled,value=profile.login)
+            input(type='text',placeholder='Name',readonly,value=profile.name)
+            input(type='text',placeholder='Surname',readonly,value=profile.surname)
+      div.routes
+         div.create-route
+            div.title
+               h2 Новый маршрут
+            div.body
+               form(method="POST")
+                  input(type="text",name="name",placeholder='Name',required)
+                  input(type="text",name="descript",placeholder='Description',required)
+                  input(type="text",name="max_users",placeholder='Max users',required)
+                  input(type="text",placeholder='Creator',disabled,readonly,required,value=profile.login)
+                  button(type='submit') Создать

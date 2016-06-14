@@ -2,26 +2,55 @@ doctype html
 html
     head
         meta(charset='utf-8')
-        title OLOO
+        title Главная
+        link(href='css/index.css',rel='stylesheet')
+        link(href='css/index_page.css',rel='stylesheet')
+        link(href='css/profile.css',rel='stylesheet')
+        link(href='css/menu.css',rel='stylesheet')
+        link(href='css/animation.css',rel='stylesheet')
+        link(href='css/index_page.css',rel='stylesheet')
+        script(src='js/jquery.js')
+        script(src='js/script.js')
     body
-        p Clients
-        form(method="POST")
-            select(name="name")
-                each client in clients
-                    option(value=client.name) #{client.name}
-            select(name="surname")
-                each client in clients
-                    option(value=client.surname) #{client.surname}
-            p nameOn
-            input(type='radio',name="filter",value="nameOn",checked)
-            p surnameOn
-            input(type='radio',name="filter",value="surnameOn")
-            p all
-            input(type='radio',name="filter",value="All")
-            br
-            button(type="submit") Send
-        div.results
-            if info
-                each elem in info
-                    each i in elem
-                        p #{i}
+        div.menu.disabled
+            div.close-icon
+                div(data-click="menu")
+            div.menu-element(data-menu="routes")
+                p Маршруты
+            div.menu-element(data-menu="people")
+                p Люди
+            div.menu-element(data-menu="logout")
+                p Выйти
+        div.profile
+            div.menu-icon(data-click="menu")
+                hr
+                hr
+                hr
+            div.title
+                h2 Профиль
+            div.profile-info
+                input(type='text',name='login',placeholder='Login',readonly,disabled,value=profile.login)
+                input(type='text',name='name',placeholder='Name', value=profile.name)
+                input(type='text',surname='surname',placeholder='Surname',value=profile.surname)
+        div.routes
+            div.head-list
+                h2 Маршруты
+            div.title-row
+                div
+                    p Name
+                div
+                    p Description
+                div
+                    p Max users
+                div
+                    p Status
+                div
+                    p Creator
+            div.body-list
+                each element in routes
+                    div.body-list__element
+                        div #{element.name}
+                        div #{element.descript}
+                        div #{element.max_users}
+                        div #{element.status}
+                        div #{element.creator}

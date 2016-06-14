@@ -1,7 +1,9 @@
 var _route = {
     index:      '/',
     register:   '/register',
-    auth:       '/auth'
+    auth:       '/auth',
+    logout:     '/logout',
+    routes:     '/routes'
 };
 
 module.exports = function(value){

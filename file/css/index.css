@@ -13,6 +13,9 @@ html,body{
     font-family: AlpicoFont!important;
     font-weight: 300;
     color: rgb(119,119,119);
+    min-width: 1280px;
+    min-height: 600px;
+    background: #f4f4f4;
 }
 
 p,a,h1,h2,h3,h4,h5,h6{
