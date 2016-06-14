@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cafe5635-681d-4e02-a5cc-014508753655" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/css/animation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/css/index_page.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/logout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/css/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/css/profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/css/routes.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/routes.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/routes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/file/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ResSend.js" afterPath="$PROJECT_DIR$/ResSend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/auth.js" afterPath="$PROJECT_DIR$/models/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/db_query.js" afterPath="$PROJECT_DIR$/models/db_query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file/css/index.css" afterPath="$PROJECT_DIR$/file/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/index.js" afterPath="$PROJECT_DIR$/models/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dump20160614.sql" />
     </list>
     <ignored path="ololo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -381,6 +363,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\chpak" />
       <recent name="F:\chpak\file\js" />
       <recent name="F:\chpak\file\css" />
     </key>
@@ -1060,6 +1043,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.775">
           <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dump20160614.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
