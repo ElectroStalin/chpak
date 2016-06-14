@@ -13,6 +13,7 @@ var ValidateData = {
     index_profile:['login'],
     index_routes:['login','creator'],
     routes:['name','descript','max_users','creator'],
+    routes_other:["creator","id"],
     data:function(value){
         var _data = [];
         for(var i in this[config.name]){
@@ -44,6 +45,10 @@ var config = {
     },
     routes:{
         sql:"INSERT INTO routes (name,descript,max_users,creator) VALUES (?,?,?,?)",
+        values:[]
+    },
+    routes_other:{
+        sql:"select * from routes as r where r.creator <> ? and ? not in (select * from routes_users where routeId = r.id)",
         values:[]
     },
     get Get(){

@@ -40,7 +40,11 @@ module.exports = {
             ResSend(res,{status:200,redirect:'/auth'});
         }
     },
-    Put:function(req,res){
+    Put:function(req,res) {
+        if ('token' in req.cookies) {
 
+        } else {
+            ResSend(res, {status: 200, redirect: '/auth'});
+        }
     }
 };

@@ -13,7 +13,7 @@ module.exports = {
             DB.config.Name = 'register';
             DB.config.Set = req.body;
             DB.Get(function (status, result) {
-                status ? ResSend(res, {status: 200, redirect: '/login'})
+                status ? ResSend(res, {status: 200, redirect: '/auth'})
                     : ResSend(res, {error: 403});
             });
         }
