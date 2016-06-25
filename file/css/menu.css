@@ -4,6 +4,7 @@
     bottom: 0;
     width: 300px;
     background: #121b3e;
+    z-index:1500;
 }
 
 .menu .menu-element{

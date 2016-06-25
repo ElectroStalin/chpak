@@ -1,0 +1,47 @@
+doctype html
+html
+   head
+      meta(charset='utf-8')
+      title Люди
+      link(href='css/index.css',rel='stylesheet')
+      link(href='css/index_page.css',rel='stylesheet')
+      link(href='css/profile.css',rel='stylesheet')
+      link(href='css/menu.css',rel='stylesheet')
+      link(href='css/animation.css',rel='stylesheet')
+      link(href='css/index_page.css',rel='stylesheet')
+      link(href='css/people.css',rel='stylesheet')
+      script(src='js/jquery.js')
+      script(src='js/script.js')
+   body
+      div.menu.disabled
+         div.close-icon
+            div(data-click="menu")
+         div.menu-element(data-menu="index")
+            p Главная
+         div.menu-element(data-menu="route")
+            p Маршрут
+         div.menu-element(data-menu="logout")
+            p Выйти
+      div.profile
+         div.menu-icon(data-click="menu")
+            hr
+            hr
+            hr
+         div.title
+            h2 Профиль
+         div.profile-info
+            form(action)
+            input(type='text',placeholder='Login',readonly,disabled,value=profile.login)
+            input(type='text',placeholder='Name',readonly,value=profile.name)
+            input(type='text',placeholder='Surname',readonly,value=profile.surname)
+      div.people-list
+         each elem in peoples
+            div.people-list__element
+               div.info
+                  p #{elem.route_name}
+                  p #{elem.mountain_name}
+                  p #{elem.mountain_height}
+                  p #{elem.mountain_country}
+                  p #{elem.user_name} #{elem.user_surname}
+               div.btn
+                  button(onclick="window.location.href='/people/#{elem.id}'") Примкнуть

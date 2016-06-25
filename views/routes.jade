@@ -11,6 +11,7 @@ html
       link(href='css/index_page.css',rel='stylesheet')
       link(href='css/routes.css',rel='stylesheet')
       script(src='js/jquery.js')
+      script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
       script(src='js/script.js')
    body
       div.menu.disabled
@@ -30,17 +31,23 @@ html
          div.title
             h2 Профиль
          div.profile-info
-            input(type='text',placeholder='Login',readonly,dusabled,value=profile.login)
+            form(action)
+            input(type='text',placeholder='Login',readonly,disabled,value=profile.login)
             input(type='text',placeholder='Name',readonly,value=profile.name)
             input(type='text',placeholder='Surname',readonly,value=profile.surname)
-      div.routes
-         div.create-route
-            div.title
-               h2 Новый маршрут
-            div.body
-               form(method="POST")
-                  input(type="text",name="name",placeholder='Name',required)
-                  input(type="text",name="descript",placeholder='Description',required)
-                  input(type="text",name="max_users",placeholder='Max users',required)
-                  input(type="text",placeholder='Creator',disabled,readonly,required,value=profile.login)
-                  button(type='submit') Создать
+      div#map.routes
+      div.create-route
+         div.title
+            h2 Новый маршрут
+         div.body
+            form(method="POST")
+               input(type="text",name="name",placeholder='Name',required)
+               input(type="text",name="descript",placeholder='Description',required)
+               input(type="text",name="max_users",placeholder='Max users',required)
+               input(type="text",placeholder='Creator',disabled,readonly,required,value=profile.login)
+               hr
+               p.title Mountains
+               input(type="text",name="mountain_name",placeholder='Mountain name',required)
+               input(type="text",name="mountain_height",placeholder='Mountain height',required)
+               input(type="text",name="mountain_country",data-bind="map",placeholder='Mountain country',required)
+               button(type='submit') Создать

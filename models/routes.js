@@ -28,13 +28,39 @@ module.exports = {
     },
     Post:function(req,res){
         if('token' in req.cookies){
-            var _data = req.body;
-            _data['creator'] = cryptos.decrypt(req.cookies.token).split("@@")[1];
-            DB.config.Name = 'routes';
-            DB.config.Set = _data;
-            DB.Get(function(status,result){
-                status ? ResSend(res,{status:200,redirect:'/'})
-                    : ResSend(res,{status:403,redirect:'/'});
+            async.series([
+                function(callback){
+                    var _data = req.body;
+                    _data['creator'] = cryptos.decrypt(req.cookies.token).split("@@")[1];
+                    DB.config.Name = 'routes';
+                    DB.config.Set = _data;
+                    DB.Get(function(status,result){
+                        status ? callback(null,result)
+                            : callback(null,false)
+                    });
+                },
+                function(callback){
+                    var _data = req.body;
+                    _data['creator'] = cryptos.decrypt(req.cookies.token).split("@@")[1];
+                    DB.config.Name = 'mountain';
+                    DB.config.Set = _data;
+                    DB.Get(function(status,result){
+                        status ? callback(null,result)
+                            : callback(null,false)
+                    });
+                }
+            ],function(err,results){
+                if(results.indexOf(false) == -1){
+                    var _data = {'r_id':results[0].insertId,'m_id':results[1].insertId};
+                    DB.config.Name = 'r_m';
+                    DB.config.Set = _data;
+                    DB.Get(function(status,result){
+                        status ? ResSend(res,{status:200,redirect:'/'})
+                            : ResSend(res,{status:403,redirect:'/'});
+                    });
+                }else{
+                    ResSend(res,{status:403,redirect:'/'});
+                }
             });
         }else{
             ResSend(res,{status:200,redirect:'/auth'});

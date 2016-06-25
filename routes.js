@@ -3,7 +3,9 @@ var _route = {
     register:   '/register',
     auth:       '/auth',
     logout:     '/logout',
-    routes:     '/routes'
+    routes:     '/routes',
+    people:     '/people',
+    add:        '/people/:id'
 };
 
 module.exports = function(value){

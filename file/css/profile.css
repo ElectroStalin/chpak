@@ -4,7 +4,8 @@
     height: 100%;
     background: rgb(79,89,132);
     box-shadow: 6px 0px 12px -5px #7090cb;
-
+    position:absolute;
+    z-index:1000;
     animation: FadeInProfile 1.5s;
     -webkit-animation: FadeInProfile 1.5s;
 

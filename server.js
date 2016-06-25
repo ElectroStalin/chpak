@@ -46,6 +46,12 @@ app.route(Routes("routes").path)
 app.route(Routes("routes").path)
     .put(Routes("routes").Handler.Put);
 
+app.route(Routes('people').path)
+    .get(Routes('people').Handler.Get);
+
+app.route(Routes('add').path)
+    .get(Routes('add').Handler);
+
 app.listen(9000);
 console.log('server start!');
 
